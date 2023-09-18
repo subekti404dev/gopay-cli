@@ -1,0 +1,30 @@
+{
+  "name": "gopay-cli",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "pnpm run build-js && pnpm run build-bin && pnpm run build-cleanup",
+    "build-js": "ncc build ./src/index.ts -o build",
+    "build-bin": "pkg ./build/index.js -o bin/gopay",
+    "build-cleanup": "rm -rf build",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@vercel/ncc": "^0.38.0",
+    "pkg": "^5.8.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@inquirer/input": "^1.2.11",
+    "@inquirer/prompts": "^3.1.1",
+    "@inquirer/select": "^1.2.11",
+    "commander": "^11.0.0",
+    "gopay-sdk": "git+ssh://github.com/subekti404dev/gopay-sdk",
+    "node-localstorage": "^3.0.5"
+  }
+}
