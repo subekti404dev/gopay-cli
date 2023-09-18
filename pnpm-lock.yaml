@@ -8,6 +8,7 @@ specifiers:
   '@vercel/ncc': ^0.38.0
   commander: ^11.0.0
   gopay-sdk: git+ssh://github.com/subekti404dev/gopay-sdk
+  lodash.uniqby: ^4.7.0
   node-localstorage: ^3.0.5
   pkg: ^5.8.1
   typescript: ^5.2.2
@@ -18,6 +19,7 @@ dependencies:
   '@inquirer/select': 1.2.11
   commander: 11.0.0
   gopay-sdk: github.com/subekti404dev/gopay-sdk/1fb626ee002074bc93ee118f2ec5fafa9648aa3f_typescript@5.2.2
+  lodash.uniqby: 4.7.0
   node-localstorage: 3.0.5
 
 devDependencies:
@@ -675,6 +677,10 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.11
     dev: true
+
+  /lodash.uniqby/4.7.0:
+    resolution: {integrity: sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==}
+    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}

@@ -1,14 +1,14 @@
 import Gopay from "gopay-sdk";
+import uniqBy from "lodash.uniqby";
 
 export const getBankList = async (gopay: Gopay) => {
   try {
     const resp = await gopay.bank.getBanks();
-    console.table(
-      [...resp?.data.banks, ...resp.data.top_banks].map((b) => ({
-        code: b.bank_code,
-        name: b.bank_name,
-      }))
-    );
+    const data = [...resp.data.top_banks, ...resp?.data.banks].map((b) => ({
+      code: b.bank_code,
+      name: b.bank_name,
+    }));
+    console.table(uniqBy(data, 'code'));
   } catch (error) {
     const respData = error?.response?.data || {};
     console.log(respData);
