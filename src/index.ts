@@ -7,6 +7,7 @@ import { customerBalances, customerInfo } from "./services/customer.service";
 import {
   getBankList,
   transferBank,
+  transferWizard,
   validateBank,
 } from "./services/bank.service";
 const NodeLS = require("node-localstorage").LocalStorage;
@@ -72,7 +73,8 @@ bankCommand
     if (bank && account && amount && pin) {
       transferBank(gopay, parseInt(amount), account, bank, pin);
     } else {
-      console.log(`Err: bank, account, amount and pin is required `);
+      // console.log(`Err: bank, account, amount and pin is required `);
+      transferWizard(gopay)
     }
   });
 
