@@ -84,12 +84,28 @@ export const logout = async (gopay: Gopay) => {
   }
 };
 
-
 export const refreshToken = async (gopay: Gopay) => {
   try {
     await gopay.auth.refreshToken();
   } catch (error) {
     const respData = error?.response?.data || {};
     console.log(respData);
+  }
+};
+
+export const checkLastTokenUpdate = async (gopay: Gopay) => {
+  const day = 86400;
+  const lastUpdated = gopay._credentials._credentials.lastTokenUpdated;
+  if (!lastUpdated) return;
+  try {
+    const lastUpdatedInt = parseInt(lastUpdated);
+    const now = new Date().getTime() / 1000;
+    const diff = now - lastUpdatedInt;
+
+    if (diff > day) {
+      await refreshToken(gopay);
+    }
+  } catch (error) {
+    return;
   }
 };

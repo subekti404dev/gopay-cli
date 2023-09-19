@@ -2,7 +2,7 @@ import { banner } from "./constant";
 import { Command } from "commander";
 import { homedir } from "os";
 import Gopay from "gopay-sdk";
-import { login } from "./services/auth.service";
+import { checkLastTokenUpdate, login } from "./services/auth.service";
 import { customerBalances, customerInfo } from "./services/customer.service";
 import {
   getBankList,
@@ -16,6 +16,7 @@ const gopay = new Gopay({ localStorage: new NodeLS(`${homedir}/.gopay`) });
 const program = new Command();
 
 const main = async () => {
+  await checkLastTokenUpdate(gopay)
   console.clear()
   console.log(banner);
   program

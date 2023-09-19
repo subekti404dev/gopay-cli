@@ -18,7 +18,7 @@ dependencies:
   '@inquirer/prompts': 3.1.1
   '@inquirer/select': 1.2.11
   commander: 11.0.0
-  gopay-sdk: github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba_typescript@5.2.2
+  gopay-sdk: github.com/subekti404dev/gopay-sdk/f0455c649b1d78dcf4a8aef81569e1c26d0fe01f_typescript@5.2.2
   lodash.uniqby: 4.7.0
   node-localstorage: 3.0.5
 
@@ -297,7 +297,7 @@ packages:
   /axios/1.5.0:
     resolution: {integrity: sha512-D4DdjDo5CY50Qms0qGQTTw6Q44jl7zRwY7bthds06pUGfChBCTcQs+N743eFWGEd6pRTMd6A+I87aWyFV5wiZQ==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.3
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -493,8 +493,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /follow-redirects/1.15.2:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+  /follow-redirects/1.15.3:
+    resolution: {integrity: sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -1178,9 +1178,9 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba_typescript@5.2.2:
-    resolution: {tarball: https://codeload.github.com/subekti404dev/gopay-sdk/tar.gz/abe182f482b612a21649870f81b8fea390250aba}
-    id: github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba
+  github.com/subekti404dev/gopay-sdk/f0455c649b1d78dcf4a8aef81569e1c26d0fe01f_typescript@5.2.2:
+    resolution: {tarball: https://codeload.github.com/subekti404dev/gopay-sdk/tar.gz/f0455c649b1d78dcf4a8aef81569e1c26d0fe01f}
+    id: github.com/subekti404dev/gopay-sdk/f0455c649b1d78dcf4a8aef81569e1c26d0fe01f
     name: gopay-sdk
     version: 0.0.1
     prepare: true
