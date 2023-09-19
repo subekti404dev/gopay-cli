@@ -13,7 +13,7 @@ import {
 const NodeLS = require("node-localstorage").LocalStorage;
 
 const gopay = new Gopay({ localStorage: new NodeLS(`${homedir}/.gopay`) });
-const program = new Command("login");
+const program = new Command();
 
 const main = async () => {
   console.clear()
