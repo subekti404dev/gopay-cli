@@ -18,7 +18,7 @@ dependencies:
   '@inquirer/prompts': 3.1.1
   '@inquirer/select': 1.2.11
   commander: 11.0.0
-  gopay-sdk: github.com/subekti404dev/gopay-sdk/1fb626ee002074bc93ee118f2ec5fafa9648aa3f_typescript@5.2.2
+  gopay-sdk: github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba_typescript@5.2.2
   lodash.uniqby: 4.7.0
   node-localstorage: 3.0.5
 
@@ -1178,9 +1178,9 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  github.com/subekti404dev/gopay-sdk/1fb626ee002074bc93ee118f2ec5fafa9648aa3f_typescript@5.2.2:
-    resolution: {tarball: https://codeload.github.com/subekti404dev/gopay-sdk/tar.gz/1fb626ee002074bc93ee118f2ec5fafa9648aa3f}
-    id: github.com/subekti404dev/gopay-sdk/1fb626ee002074bc93ee118f2ec5fafa9648aa3f
+  github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba_typescript@5.2.2:
+    resolution: {tarball: https://codeload.github.com/subekti404dev/gopay-sdk/tar.gz/abe182f482b612a21649870f81b8fea390250aba}
+    id: github.com/subekti404dev/gopay-sdk/abe182f482b612a21649870f81b8fea390250aba
     name: gopay-sdk
     version: 0.0.1
     prepare: true

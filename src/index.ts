@@ -4,7 +4,11 @@ import { homedir } from "os";
 import Gopay from "gopay-sdk";
 import { login } from "./services/auth.service";
 import { customerBalances, customerInfo } from "./services/customer.service";
-import { getBankList, validateBank } from "./services/bank.service";
+import {
+  getBankList,
+  transferBank,
+  validateBank,
+} from "./services/bank.service";
 const NodeLS = require("node-localstorage").LocalStorage;
 
 const gopay = new Gopay({ localStorage: new NodeLS(`${homedir}/.gopay`) });
@@ -54,6 +58,22 @@ bankCommand
   .action((_, opts) => {
     const { bank, account } = opts?._optionValues || {};
     validateBank(gopay, bank, account);
+  });
+
+bankCommand
+  .command("tf")
+  .option("-b, --bank <bank_code>", "bank code")
+  .option("-a, --account <account_number>", "bank account")
+  .option("-m, --amount <amount>", "amount to transfer")
+  .option("-p, --pin <pin>", "gopay pin")
+  .description("validate bank account")
+  .action((_, opts) => {
+    const { bank, account, amount, pin } = opts?._optionValues || {};
+    if (bank && account && amount && pin) {
+      transferBank(gopay, parseInt(amount), account, bank, pin);
+    } else {
+      console.log(`Err: bank, account, amount and pin is required `);
+    }
   });
 
 program.parse();

@@ -170,3 +170,7 @@ dist
 
 # IntelliJ based IDEs
 .idea
+
+# build artefact
+build
+bin

@@ -8,7 +8,7 @@ export const getBankList = async (gopay: Gopay) => {
       code: b.bank_code,
       name: b.bank_name,
     }));
-    console.table(uniqBy(data, 'code'));
+    console.table(uniqBy(data, "code"));
   } catch (error) {
     const respData = error?.response?.data || {};
     console.log(respData);
@@ -32,5 +32,32 @@ export const validateBank = async (
     //   "./err-resp.json",
     //   JSON.stringify(respData || {}, undefined, 2)
     // );
+  }
+};
+
+export const transferBank = async (
+  gopay: Gopay,
+  amount: number,
+  accountNumber: string,
+  bankCode: string,
+  pin: string
+) => {
+  try {
+    const resp = await gopay.bank.transfer(
+      amount,
+      bankCode,
+      accountNumber,
+      pin
+    );
+    console.log(resp);
+  } catch (error) {
+    const respData = error?.response?.data || {};
+    console.log(respData);
+    const fs = require("fs");
+    fs.writeFileSync("./err.json", JSON.stringify(error, undefined, 2));
+    fs.writeFileSync(
+      "./err-resp.json",
+      JSON.stringify(respData || {}, undefined, 2)
+    );
   }
 };
