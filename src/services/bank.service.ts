@@ -100,15 +100,26 @@ export const transferWizard = async (gopay: Gopay) => {
         message: "Enter amount: ",
         validate: (v: string) => !!v,
       });
-      const pin = await password({ message: "Enter your pin: " });
 
-      await transferBank(
-        gopay,
+      const fee = await gopay.bank.checkTransferFee(
         parseInt(amount),
-        accountNumber,
         selectedBank,
-        pin
+        accountNumber
       );
+      const confirmFee = await confirm({
+        message: `Transfer Fee is ${fee.data.service_fee.display_value}, Transfer ?`,
+      });
+      if (confirmFee) {
+        const pin = await password({ message: "Enter your pin: " });
+
+        await transferBank(
+          gopay,
+          parseInt(amount),
+          accountNumber,
+          selectedBank,
+          pin
+        );
+      }
     } else {
       process.exit(0);
     }
